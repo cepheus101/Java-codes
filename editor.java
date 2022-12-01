@@ -1,7 +1,7 @@
 // Java Program to create a text editor using java
 import javax.swing.*;
 import java.awt.event.*;
-import javax.swing.plaf.metal.*;
+import javax.swing.UIManager;
 class editor extends JFrame implements ActionListener 
 {
 	// Text component
@@ -17,11 +17,10 @@ class editor extends JFrame implements ActionListener
 		f = new JFrame("editor");
 
 		try {
-			// Set metal look and feel
-			UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
-
-			// Set theme to ocean
-			MetalLookAndFeel.setCurrentTheme(new OceanTheme());
+			
+			// Set look and feel
+			UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+		
 		}
 		catch (Exception e) {
 		}
