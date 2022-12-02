@@ -14,7 +14,7 @@ class editor extends JFrame implements ActionListener
 	editor()
 	{
 		// Create a frame
-		f = new JFrame("editor");
+		f = new JFrame("Text Editor");
 
 		try {
 			
@@ -35,9 +35,9 @@ class editor extends JFrame implements ActionListener
 		JMenu m = new JMenu("Edit");
 
 		// Create menu items
-		JMenuItem mi1 = new JMenuItem("cut");
-		JMenuItem mi2 = new JMenuItem("copy");
-		JMenuItem mi3 = new JMenuItem("paste");
+		JMenuItem mi1 = new JMenuItem("Cut");
+		JMenuItem mi2 = new JMenuItem("Copy");
+		JMenuItem mi3 = new JMenuItem("Paste");
 
 		// Add action listener
 		mi1.addActionListener(this);
@@ -48,13 +48,8 @@ class editor extends JFrame implements ActionListener
 		m.add(mi2);
 		m.add(mi3);
 
-		JMenuItem mc = new JMenuItem("close");
-
-		mc.addActionListener(this);
-
 		mb.add(m);
-		mb.add(mc);
-
+		
 		f.setJMenuBar(mb);
 		f.add(t);
 		f.setSize(500, 500);
@@ -66,21 +61,17 @@ class editor extends JFrame implements ActionListener
 	{
 		String s = e.getActionCommand();
 
-		if (s.equals("cut")) 
+		if (s.equals("Cut")) 
 		{
 			t.cut();
 		}
-		else if (s.equals("copy")) 
+		else if (s.equals("Copy")) 
 		{
 			t.copy();
 		}
-		else if (s.equals("paste")) 
+		else if (s.equals("Paste")) 
 		{
 			t.paste();
-		}
-		else if (s.equals("close")) 
-		{
-			f.setVisible(false);
 		}
 	}
 
