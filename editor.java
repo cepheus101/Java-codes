@@ -19,7 +19,7 @@ class editor extends JFrame implements ActionListener
 		try {
 			
 			// Set look and feel
-			UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+			UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
 		
 		}
 		catch (Exception e) {
