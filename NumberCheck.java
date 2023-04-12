@@ -5,8 +5,15 @@ public class NumberCheck {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a number: ");
         String input = sc.nextLine();
-        if (!input.matches("[0-9]+")) {
-            System.out.println("Invalid input. Please enter a number containing only digits 0 to 9.");
+        boolean validInput = true;
+        for (int i = 0; i < input.length(); i++) {
+            if (!Character.isDigit(input.charAt(i))) {
+                validInput = false;
+                break;
+            }
+        }
+        if (!validInput) {
+            System.out.println("INVALID INPUT.");
             return;
         }
         int n = Integer.parseInt(input);
