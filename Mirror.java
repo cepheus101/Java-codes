@@ -17,7 +17,15 @@ public class Mirror {
         System.out.println("Enter the elements of the matrix: ");
         for (int i = 0; i < M; i++) {
             for (int j = 0; j < N; j++) {
-                A[i][j] = sc.nextInt();
+                if (sc.hasNextInt())
+                {
+                    A[i][j] = sc.nextInt();
+                }
+                else
+                {
+                    System.out.println("INVALID INPUT");
+                    System.exit(0);
+                }
             }
         }
         
