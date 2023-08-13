@@ -55,7 +55,11 @@ public class DeleteWord {
         while (front != rear) {
             count++;
             String w = queue[front++];
-            if (count == position && w.equals(word)) {
+            if (count == position) {
+                if (!w.equals(word)) {
+                    System.out.println("WORD MISMATCH.");
+                    return;
+                }
                 continue;
             }
             result += w + " ";
