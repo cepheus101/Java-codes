@@ -46,12 +46,22 @@ public class WondrousSquare {
         }
 
         System.out.println("PRIME\tROW INDEX\tCOLUMN INDEX");
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                if (isPrime(grid[i][j])) {
-                    System.out.println(grid[i][j] + "\t" + i + "\t\t" + j);
+        
+        for(int prime=2;prime<=n*n;prime++){
+            if(isPrime(prime)){
+                boolean found=false;
+                for(int i=0;i<n;i++){
+                    for(int j=0;j<n;j++){
+                        if(grid[i][j]==prime){
+                            System.out.println(prime + "\t" + i + "\t\t" + j);
+                            found=true;
+                            break;
+                        }
+                    }
+                    if(found) break;
                 }
             }
+            
         }
     }
 
