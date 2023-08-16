@@ -56,14 +56,18 @@ public class DeleteWord {
             count++;
             String w = queue[front++];
             if (count == position) {
-                if (!w.equals(word)) {
+                if (!w.startsWith(word)) {
                     System.out.println("WORD MISMATCH.");
                     return;
                 }
+                result += w.substring(word.length());
                 continue;
             }
             result += w + " ";
         }
+        
+        result = result.replaceAll("\\s+(,)", ", ") + " ";
+        
         System.out.println(result.trim());
     }
 }
