@@ -9,9 +9,13 @@ public class WondrousSquare {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 grid[i][j] = sc.nextInt();
+                if (grid[i][j] > n * n) {
+                    System.out.println("Invalid input element. Elements must be between 1 and " + (n * n) + ".");
+                    return;
+                }
             }
         }
-        
+
         boolean isWondrousSquare = true;
         int sum = (n * (n * n + 1)) / 2;
         boolean[] usedNumbers = new boolean[n * n + 1];
@@ -46,22 +50,22 @@ public class WondrousSquare {
         }
 
         System.out.println("PRIME\tROW INDEX\tCOLUMN INDEX");
-        
-        for(int prime=2;prime<=n*n;prime++){
-            if(isPrime(prime)){
-                boolean found=false;
-                for(int i=0;i<n;i++){
-                    for(int j=0;j<n;j++){
-                        if(grid[i][j]==prime){
+
+        for (int prime = 2; prime <= n * n; prime++) {
+            if (isPrime(prime)) {
+                boolean found = false;
+                for (int i = 0; i < n; i++) {
+                    for (int j = 0; j < n; j++) {
+                        if (grid[i][j] == prime) {
                             System.out.println(prime + "\t" + i + "\t\t" + j);
-                            found=true;
+                            found = true;
                             break;
                         }
                     }
-                    if(found) break;
+                    if (found) break;
                 }
             }
-            
+
         }
     }
 
