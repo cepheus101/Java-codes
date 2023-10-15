@@ -6,9 +6,9 @@ public class AmountInWords
         Scanner sc = new Scanner(System.in);
         System.out.print("Amount = ");
         double a = sc.nextDouble();
-        if(a<0)
+        if(a<0 || a>=1000000000)
         {
-            System.out.println("Amount must be positive");
+            System.out.println("Amount Invalid");
             System.exit(0);
         }
         int r = (int)a;
